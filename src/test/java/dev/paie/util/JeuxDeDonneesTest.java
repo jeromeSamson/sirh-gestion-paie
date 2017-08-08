@@ -27,19 +27,19 @@ public class JeuxDeDonneesTest {
 
 	@Test
 	public void test_primeExceptionnelle() {
-		assert (bulletin1.getPrimeExceptionnelle()).equals(new BigDecimal("1000"));
+		assertThat(bulletin1.getPrimeExceptionnelle()).isEqualTo(new BigDecimal("1000"));
 	}
 
 	@Test
 	public void test_employe() {
-		assert (bulletin1.getRemunerationEmploye().getMatricule()).equals("M01");
+		assertThat(bulletin1.getRemunerationEmploye().getMatricule()).isEqualTo("M01");
 	}
 
 	@Test
 	public void test_entreprise() {
-		assert (bulletin1.getRemunerationEmploye().getEntreprise().getSiret()).equals("80966785000022");
-		assert (bulletin1.getRemunerationEmploye().getEntreprise().getDenomination()).equals("Dev Entreprise");
-		assert (bulletin1.getRemunerationEmploye().getEntreprise().getCodeNaf()).equals("6202A");
+		assertThat(bulletin1.getRemunerationEmploye().getEntreprise().getSiret()).isEqualTo("80966785000022");
+		assertThat(bulletin1.getRemunerationEmploye().getEntreprise().getDenomination()).isEqualTo("Dev Entreprise");
+		assertThat(bulletin1.getRemunerationEmploye().getEntreprise().getCodeNaf()).isEqualTo("6202A");
 	}
 
 	@Test
@@ -65,8 +65,8 @@ public class JeuxDeDonneesTest {
 
 	@Test
 	public void test_grade() {
-		assert (bulletin1.getRemunerationEmploye().getGrade().getNbHeuresBase()).equals(new BigDecimal("151.67"));
-		assert (bulletin1.getRemunerationEmploye().getGrade().getTauxBase()).equals(new BigDecimal("11.0984"));
+		assertThat(bulletin1.getRemunerationEmploye().getGrade().getNbHeuresBase()).isEqualTo(new BigDecimal("151.67"));
+		assertThat(bulletin1.getRemunerationEmploye().getGrade().getTauxBase()).isEqualTo(new BigDecimal("11.0984"));
 	}
 
 	@After
