@@ -46,16 +46,12 @@
 				<ref bean="ep06" />
 				<ref bean="ep07" />
 				<ref bean="ep12" />
-				<ref bean="ep14" />
 				<ref bean="ep19" />
 				<ref bean="ep20" />
-				<ref bean="ep21" />
 				<ref bean="ep28" />
 				<ref bean="ep37" />
 				<ref bean="epr1" />
-				<ref bean="epr2" />
 				<ref bean="e900" />
-				<ref bean="e901" />
 			</util:list>
 		</property>
 		<property name="cotisationsImposables">
