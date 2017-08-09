@@ -14,7 +14,7 @@ import javax.persistence.NamedQuery;
 		@NamedQuery(name = "cotisation.findById", query = "Select c from Cotisation c where c.id=:id") })
 public class Cotisation {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String code;
 	private String libelle;

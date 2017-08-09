@@ -27,10 +27,10 @@ public class GradeServiceJdbcTemplate implements GradeService {
 	@Override
 	public void sauvegarder(Grade nouveauGrade) {
 		String sql = "Insert into Grade (code,nbHeuresBase,tauxBase) Values(:code,:nbHeuresBase,:tauxBase);";
-		Map<String, Object> mapGrade = new HashMap<>();
+		Map<String, String> mapGrade = new HashMap<>();
 		mapGrade.put("code", nouveauGrade.getCode());
-		mapGrade.put("nbHeuresBase", nouveauGrade.getNbHeuresBase());
-		mapGrade.put("tauxBase", nouveauGrade.getTauxBase());
+		mapGrade.put("nbHeuresBase", nouveauGrade.getNbHeuresBase().toString());
+		mapGrade.put("tauxBase", nouveauGrade.getTauxBase().toString());
 		this.namedParameterJdbcTemplate.update(sql, mapGrade);
 
 	}
@@ -38,11 +38,11 @@ public class GradeServiceJdbcTemplate implements GradeService {
 	@Override
 	public void mettreAJour(Grade grade) {
 		String sql = "Update Grade set code = :code, nbHeuresBase = :nbHeuresBase, tauxBase = :tauxBase where Id = :id";
-		Map<String, Object> mapGrade = new HashMap<>();
-		mapGrade.put("id", grade.getId());
-		mapGrade.put("code", grade.getCode());
-		mapGrade.put("nbHeuresBase", grade.getNbHeuresBase());
-		mapGrade.put("tauxBase", grade.getTauxBase());
+		Map<String, String> mapGrade = new HashMap<>();
+		mapGrade.put("id", grade.getId().toString());
+		mapGrade.put("code", grade.getCode().toString());
+		mapGrade.put("nbHeuresBase", grade.getNbHeuresBase().toString());
+		mapGrade.put("tauxBase", grade.getTauxBase().toString());
 		this.namedParameterJdbcTemplate.update(sql, mapGrade);
 
 	}

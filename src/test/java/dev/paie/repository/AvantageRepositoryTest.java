@@ -36,12 +36,12 @@ public class AvantageRepositoryTest {
 		Avantage avOne = avantageRepository.findOne(av.getId());
 		assertThat(avOne.getCode()).isEqualTo(av.getCode());
 		// TODO modifier un avantage
-		av.setCode("Avantage 2");
-		avantageRepository.save(av);
+		avOne.setCode("Avantage 2");
+		avantageRepository.save(avOne);
 		// TODO vérifier que les modifications sont bien prises en compte via la
 		// méthode findOne
-		av.setId(listAv.stream().filter(c -> c.getCode().equals("Avantage 2")).findFirst().get().getId());
-		avOne = avantageRepository.findOne(av.getId());
+
+		av = avantageRepository.findOneByCode("Avantage 2");
 		assertThat(avOne.getCode()).isEqualTo(av.getCode());
 	}
 }

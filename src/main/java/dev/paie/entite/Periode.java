@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 public class Periode {
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private LocalDate dateDebut;
