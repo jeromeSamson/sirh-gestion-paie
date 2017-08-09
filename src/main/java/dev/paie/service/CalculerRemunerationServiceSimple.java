@@ -53,7 +53,5 @@ public class CalculerRemunerationServiceSimple implements CalculerRemunerationSe
 				.formaterBigDecimal(new BigDecimal(result.getNetImposable()).subtract(totalRetenueSalarialeImposable)));
 
 		return result;
-
 	}
-
 }
