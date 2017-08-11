@@ -57,16 +57,19 @@
 				<db.url>jdbc:h2:mem:test;DB_CLOSE_DELAY=-1</db.url>
 				<db.user>sa</db.user>
 				<db.pwd></db.pwd>
+				<schema-generation.database.action>create</schema-generation.database.action>
+				<hibernate.dialect>org.hibernate.dialect.H2Dialect</hibernate.dialect>
 			</properties>
 			<dependencies>
 				<dependency>
 					<groupId>com.h2database</groupId>
 					<artifactId>h2</artifactId>
 					<version>1.4.196</version>
-					<scope>test</scope>
+					<scope>runtime</scope>
 				</dependency>
 			</dependencies>
 		</profile>
+
 		<profile>
 			<id>prod</id>
 			<build>
@@ -85,7 +88,7 @@
 				<dependency>
 					<groupId>mysql</groupId>
 					<artifactId>mysql-connector-java</artifactId>
-					<version>5.1.41</version>
+					<version>5.1.6</version>
 					<scope>runtime</scope>
 				</dependency>
 			</dependencies>
@@ -94,6 +97,8 @@
 				<db.url>jdbc:mysql://localhost:3306/sirh-paie?useSSL=false</db.url>
 				<db.user>user</db.user>
 				<db.pwd>user</db.pwd>
+				<schema-generation.database.action>drop-and-create</schema-generation.database.action>
+				<hibernate.dialect>org.hibernate.dialect.MySQL57InnoDBDialect</hibernate.dialect>
 			</properties>
 		</profile>
 	</profiles>
@@ -154,9 +159,13 @@
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<version>5.1.0.Final</version>
-			<scope>runtime</scope>
+			<artifactId>hibernate-core</artifactId>
+			<version>5.2.10.Final</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.2.2.RELEASE</version>
 		</dependency>
 
 		<dependency>
@@ -170,6 +179,35 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.7.18</version>
 			<scope>compile</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-web</artifactId>
+			<version>4.2.2.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-config</artifactId>
+			<version>4.2.2.RELEASE</version>
 		</dependency>
 
 	</dependencies>
