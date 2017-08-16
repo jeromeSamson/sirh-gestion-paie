@@ -54,8 +54,8 @@ public class GradeServiceJdbcTemplate implements GradeService {
 			Grade g = new Grade();
 			g.setCode(rs.getString("code"));
 			g.setId(rs.getInt("Id"));
-			g.setNbHeuresBase(new BigDecimal(rs.getFloat("nbHeuresBase")));
-			g.setTauxBase(new BigDecimal(rs.getFloat("tauxBase")));
+			g.setNbHeuresBase(BigDecimal.valueOf(rs.getFloat("nbHeuresBase")));
+			g.setTauxBase(BigDecimal.valueOf(rs.getFloat("tauxBase")));
 			return g;
 
 		});
