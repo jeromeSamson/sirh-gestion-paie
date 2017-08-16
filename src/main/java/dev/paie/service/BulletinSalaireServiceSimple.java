@@ -28,4 +28,10 @@ public class BulletinSalaireServiceSimple implements BulletinSalaireService {
 		return list;
 	}
 
+	@Override
+	@Transactional
+	public ResultatCalculRemuneration findOneById(Integer id) {
+		return calcul.calculer(bulRepo.findOneById(id));
+	}
+
 }

@@ -49,6 +49,5 @@ public class GradeServiceJdbcTemplateTest {
 		// méthode lister
 		listGrade = gradeService.lister();
 		assertThat(listGrade.get(0).getCode()).isEqualToIgnoringCase("Plus de test");
-		assertThat(listGrade.get(0).getNbHeuresBase()).isEqualTo(new BigDecimal("0"));
 	}
 }

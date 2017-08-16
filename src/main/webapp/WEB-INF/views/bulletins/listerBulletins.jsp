@@ -34,7 +34,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-offset-8 col-md-4 col-xs-offset-8 col-xs-4">
-					<a href="<c:url value='/mvc/employes/creer/'/>" class="btn btn-primary pull-right">Créer un nouveau bulletin</a>
+					<a href="<c:url value='/mvc/bulletins/creer/'/>" class="btn btn-primary pull-right">Créer un nouveau bulletin</a>
 				</div>
 			</div>
 			<br>
@@ -60,7 +60,7 @@
 							<td>${bul.value.salaireBrut}</td>
 							<td>${bul.value.netImposable}</td>
 							<td>${bul.value.netAPayer}</td>
-							<td><a href="action">Visualiser</a></td>
+							<td> <a href='<c:url value="/mvc/bulletins/${bul.key.id}"></c:url>'>Visualiser</a></td>
 						</tr>
 					</c:forEach>
 					</tbody>

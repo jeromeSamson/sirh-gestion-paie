@@ -6,4 +6,6 @@ import dev.paie.entite.BulletinSalaire;
 
 public interface BulletinSalaireRepository extends JpaRepository<BulletinSalaire, Integer> {
 
+	BulletinSalaire findOneById(Integer id);
+
 }
